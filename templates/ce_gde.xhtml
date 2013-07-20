@@ -3,27 +3,26 @@
 	<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 	<?php endif; ?>
 
-	<?php if ($this->gde_data['description']) : ?>
+	<?php if ($this->description) : ?>
 	<div class="description">
-		<?php echo $this->gde_data['description']; ?>
+		<?php echo $this->description; ?>
 	</div>
 	<?php endif; ?>
 
 	
 	<?php
-		$objFile = \FilesModel::findByPk($this->gde_data['file']);
 		$http = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http';
-		$url = $http . '%3A%2F%2F' . $_SERVER['HTTP_HOST'] . '%2F' . $foobar = str_replace('/', '%2F', $objFile->path) . '&embedded=true';
+		$url = $http . '%3A%2F%2F' . $_SERVER['HTTP_HOST'] . '%2F' . $foobar = str_replace('/', '%2F', $this->filepath) . '&embedded=true';
 	?>
 	
 	<div id="ce_gdeFrame">
-		<iframe src="http://docs.google.com/viewer?url=<?php echo $url; ?>" width="<?php echo $this->gde_data['width']; ?>" height="<?php echo $this->gde_data['height']; ?>" style="border: none;"></iframe>
+		<iframe src="http://docs.google.com/viewer?url=<?php echo $url; ?>" width="<?php echo $this->width; ?>" height="<?php echo $this->height; ?>" style="border: none;"></iframe>
 	</div>
 	
-	<?php if ($this->gde_data['showDownloadLink'] == 1) : ?>
+	<?php if ($this->showDownloadLink == 1) : ?>
 	<div id="ce_gdeDownloadLink">
-		<a href="<?php echo $url; ?>" title="Ferienpassaktion 2013">Download: <?php echo $this->gde_data['title']; ?></a>
+		<a href="<?php echo $this->filepath; ?>" title="<?php echo $this->title; ?>">Download: <?php echo $this->title; ?> <span class="size">(<?php echo $this->filesize; ?>)</span></a>
 	</div>
 	<?php endif; ?>
-
+	
 </div>

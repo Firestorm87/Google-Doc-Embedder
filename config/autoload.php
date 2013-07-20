@@ -18,7 +18,6 @@ ClassLoader::addClasses(array
 (
 	// Modules
 	'ContentGde' => 'system/modules/gde/modules/ContentGde.php',
-	'ModuleGde'  => 'system/modules/gde/modules/ModuleGde.php',
 ));
 
 
@@ -28,5 +27,4 @@ ClassLoader::addClasses(array
 TemplateLoader::addFiles(array
 (
 	'ce_gde'  => 'system/modules/gde/templates',
-	'mod_gde' => 'system/modules/gde/templates',
 ));

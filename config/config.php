@@ -42,7 +42,6 @@ $GLOBALS['BE_MOD']['content']['gde'] = array
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['miscellaneous']['gde'] = 'ModuleGde';
 
 /**
  * Content elements

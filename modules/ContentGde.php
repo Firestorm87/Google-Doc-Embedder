@@ -93,8 +93,15 @@ class ContentGde extends ContentElement
 							AND (stop = ? OR stop > ?)'
 					)
 					->execute($this->gde, 1, '', $time, '', $time);
-		$arrDocument = $objDocument->fetchAssoc();			
-		$this->Template->gde_data = $arrDocument;
+		$arrDocument = $objDocument->fetchAssoc();
+		$objFile = new \File(FilesModel::findByPk($arrDocument['file'])->path, true);
+		$this->Template->description = $arrDocument['description'];
+		$this->Template->width = $arrDocument['width'];
+		$this->Template->height = $arrDocument['height'];
+		$this->Template->showDownloadLink = $arrDocument['showDownloadLink'];
+		$this->Template->title = $arrDocument['title'];
+		$this->Template->filepath = $objFile->path;
+		$this->Template->filesize = $objFile->getReadableSize($objFile->filesize, 1);
 	}
 }
 ?>
