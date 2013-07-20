@@ -153,7 +153,7 @@ $GLOBALS['TL_DCA']['tl_gde'] = array
             'inputType' => 'text',
             'exclude' => true,
             'eval' => array('mandatory' => false, 'mandatory' => true, 'tl_class' => 'w50'),
-            'sql' => "varchar(4) NOT NULL default '100%'"
+            'sql' => "varchar(10) NOT NULL default '100%'"
         ),
         'height' => array
             (
@@ -161,7 +161,7 @@ $GLOBALS['TL_DCA']['tl_gde'] = array
             'inputType' => 'text',
             'exclude' => true,
             'eval' => array('mandatory' => false, 'mandatory' => true, 'tl_class' => 'w50'),
-            'sql' => "varchar(4) NOT NULL default '700px'"
+            'sql' => "varchar(10) NOT NULL default '700px'"
         ),
         'showDownloadLink' => array
             (
