@@ -144,7 +144,7 @@ $GLOBALS['TL_DCA']['tl_gde'] = array
             (
             'label' => &$GLOBALS['TL_LANG']['tl_gde']['file'],
             'inputType' => 'fileTree',
-			'eval' => array('fieldType' => 'radio', 'extensions' => 'JPEG,PNG,GIF,TIFF,BMP,WebM,MPEG4,3GPP,MOV,AVI,MPEGPS,WMV,FLV,TXT,CSS,HTML,PHP,C,CPP,H,HPP,JS,DOC,DOCX,XLS,XLSX,PPT,PPTX,PDF,PAGES,AI,PSD,TIFF,DXF,SVG,EPS,PS,TTF,XPS,ZIP,RAR', 'filesOnly' => true, 'files' => true, 'mandatory' => true, 'tl_class' => 'clr'),
+			'eval' => array('fieldType' => 'radio', 'extensions' => 'JPEG,PNG,GIF,TIFF,BMP,WebM,MPEG4,3GPP,MOV,AVI,MPEGPS,WMV,FLV,TXT,CSS,HTML,PHP,C,CPP,H,HPP,JS,DOC,DOCX,XLS,XLSX,PPT,PPTX,PDF,PAGES,AI,PSD,TIFF,DXF,SVG,EPS,PS,TTF,XPS,ZIP,RAR,jpeg,png,gif,tiff,bmp,webm,mpeg4,3gpp,mov,avi,mpegps,wmv,flv,txt,css,html,php,c,cpp,h,hpp,js,doc,docx,xls,xlsx,ppt,pptx,pdf,pages,ai,psd,tiff,dxf,svg,eps,ps,ttf,xps,zip,rar', 'filesOnly' => true, 'files' => true, 'mandatory' => true, 'tl_class' => 'clr'),
             'sql' => "varchar(255) NOT NULL default ''"
         ),
         'width' => array
