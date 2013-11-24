@@ -1,4 +1,4 @@
-class GdeRunonceJob extends Controller 
+<?PHP class GdeRunonceJob extends Controller 
 { 
     public function __construct() 
     { 
@@ -32,4 +32,5 @@ class GdeRunonceJob extends Controller
 } 
 
 $objGdeRunonceJob = new GdeRunonceJob(); 
-$objGdeRunonceJob->run();  
+$objGdeRunonceJob->run();
+?>
