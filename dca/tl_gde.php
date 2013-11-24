@@ -145,7 +145,7 @@ $GLOBALS['TL_DCA']['tl_gde'] = array
             'label' => &$GLOBALS['TL_LANG']['tl_gde']['file'],
             'inputType' => 'fileTree',
 			'eval' => array('fieldType' => 'radio', 'extensions' => 'JPEG,PNG,GIF,TIFF,BMP,WebM,MPEG4,3GPP,MOV,AVI,MPEGPS,WMV,FLV,TXT,CSS,HTML,PHP,C,CPP,H,HPP,JS,DOC,DOCX,XLS,XLSX,PPT,PPTX,PDF,PAGES,AI,PSD,TIFF,DXF,SVG,EPS,PS,TTF,XPS,ZIP,RAR', 'filesOnly' => true, 'files' => true, 'mandatory' => true, 'tl_class' => 'clr'),
-            'sql' => "varchar(255) NOT NULL default ''"
+            'sql' => "binary(16) NULL"
         ),
         'width' => array
             (
@@ -241,7 +241,7 @@ class tl_gde extends Backend {
 	 */
 	public function getFilePath($arrRow)
 	{
-		return FilesModel::findByPk($arrRow['file'])->name;
+		return FilesModel::findByUuid($arrRow['file'])->name;
 	}
 
 

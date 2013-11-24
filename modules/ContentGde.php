@@ -94,7 +94,7 @@ class ContentGde extends ContentElement
 					)
 					->execute($this->gde, 1, '', $time, '', $time);
 		$arrDocument = $objDocument->fetchAssoc();
-		$objFile = new \File(FilesModel::findByPk($arrDocument['file'])->path, true);
+		$objFile = new \File(FilesModel::findByUuid($arrDocument['file'])->path, true);
 		$this->Template->description = $arrDocument['description'];
 		$this->Template->width = $arrDocument['width'];
 		$this->Template->height = $arrDocument['height'];
