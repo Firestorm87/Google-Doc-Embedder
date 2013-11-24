@@ -10,24 +10,18 @@
         //Check for update to C3.2 
         if ($this->Database->tableExists('tl_gde')) 
         { 
-            $arrFields = $this->Database->listFields('tl_gde'); 
-            $blnDone = false; 
-             
             //check for table and field 
-            foreach ($arrFields as $arrField) 
+            foreach ($this->Database->listFields('tl_gde') as $arrField) 
             { 
                 if ($arrField['name'] == 'file' && $arrField['type'] == 'varchar') 
                 { 
-					// Run the version 3.2 update
-					if ($blnDone == false) 
-					{ 
-						Database\Updater::convertSingleField('tl_gde', 'file');
-					} 
+					// Run the version 3.2 update 
+					$this->Database->execute("ALTER TABLE `tl_gde` ADD `file_uuid` binary(16) NULL");
+					$this->Database->execute("UPDATE `tl_gde` SET `file_uuid`=(SELECT `uuid` FROM `tl_files` WHERE `id` = `file`)");
+					$this->Database->execute("ALTER TABLE `tl_gde` DROP COLUMN `file`");
                 } 
             } 
-             
         } 
-         
     } 
 } 
 
