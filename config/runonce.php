@@ -16,9 +16,10 @@
                 if ($arrField['name'] == 'file' && $arrField['type'] == 'varchar') 
                 { 
 					// Run the version 3.2 update 
-					$this->Database->execute("ALTER TABLE `tl_gde` ADD `file_uuid` binary(16) NULL");
-					$this->Database->execute("UPDATE `tl_gde` SET `file_uuid`=(SELECT `uuid` FROM `tl_files` WHERE `id` = `file`)");
-					$this->Database->execute("ALTER TABLE `tl_gde` DROP COLUMN `file`");
+					$this->Database->execute("ALTER TABLE `tl_gde` RENAME COLUMN `file` TO `file_pk`");
+					$this->Database->execute("ALTER TABLE `tl_gde` ADD `file` binary(16) NULL");
+					$this->Database->execute("UPDATE `tl_gde` SET `file`=(SELECT `uuid` FROM `tl_files` WHERE `id` = `file_pk`)");
+					$this->Database->execute("ALTER TABLE `tl_gde` DROP COLUMN `file_pk`");
                 } 
             } 
         } 

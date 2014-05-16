@@ -46,10 +46,10 @@ $GLOBALS['BE_MOD']['content']['gde'] = array
 /**
  * Content elements
  */
-$GLOBALS['TL_CTE']['media'] = array
+array_insert($GLOBALS['TL_CTE']['media'], 3, array
 (
 	'gde' => 'ContentGde'
-);
+));
 
 
 /**
